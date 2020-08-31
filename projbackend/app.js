@@ -42,7 +42,7 @@ app.use("/api", orderRoutes);
 app.use("/api", paymentBRoutes);
 
 //PORT
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 //starting the server.
 app.listen(port, () => {
