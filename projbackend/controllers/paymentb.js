@@ -1,11 +1,12 @@
+require("dotenv").config();
+
 var braintree = require("braintree");
 
 var gateway = braintree.connect({
   environment: braintree.Environment.Sandbox,
-  merchantId: "y39krw2y4j8ghjn8",
-  publicKey: "qkg8z2grnfphpx45",
-  privateKey: "8deb38d6bbc679ea5d15d7b602dd65d0",
-
+  merchantId: process.env.merchantId,
+  publicKey: process.env.publicKey,
+  privateKey: process.env.privateKey,
 });
 
 exports.getToken = (req, res) => {
